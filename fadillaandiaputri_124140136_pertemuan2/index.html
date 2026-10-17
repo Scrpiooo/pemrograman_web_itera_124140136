@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Tugas Kuliah</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-logo">TK</span>
+        <span class="brand-name">TugasKu</span>
+      </div>
+
+      <button type="button" class="new-task" id="newTaskBtn">
+        <span>Buat tugas baru</span>
+        <span class="plus" aria-hidden="true">+</span>
+      </button>
+
+      <nav class="nav" id="filters" aria-label="Filter tugas">
+        <button type="button" class="nav-item active" data-filter="semua">
+          <span class="nav-label">Semua tugas</span>
+          <span class="nav-count" data-count="semua">0</span>
+        </button>
+        <button type="button" class="nav-item" data-filter="aktif">
+          <span class="nav-label">Belum selesai</span>
+          <span class="nav-count" data-count="aktif">0</span>
+        </button>
+        <button type="button" class="nav-item" data-filter="selesai">
+          <span class="nav-label">Selesai</span>
+          <span class="nav-count" data-count="selesai">0</span>
+        </button>
+      </nav>
+
+      <button type="button" class="btn-ghost small hidden" id="clearDoneBtn">Hapus yang selesai</button>
+    </aside>
+
+    <main class="content">
+      <div class="top-row">
+        <section class="hero" aria-live="polite">
+          <p class="eyebrow" id="today">&nbsp;</p>
+          <h1 id="greeting">Dashboard Tugas Kuliah</h1>
+          <p class="quote-text" id="quoteText">Memuat kutipan...</p>
+          <div class="quote-footer">
+            <span class="quote-author" id="quoteAuthor"></span>
+            <button type="button" class="btn-ghost" id="quoteBtn">Kutipan baru</button>
+          </div>
+        </section>
+
+        <section class="card ring-card" id="ring"></section>
+      </div>
+
+      <section class="stats" id="stats"></section>
+
+      <section class="card">
+        <div class="list-head">
+          <h2>Daftar Tugas</h2>
+          <select id="sortSelect" aria-label="Urutkan tugas">
+            <option value="deadline">Urut deadline</option>
+            <option value="terbaru">Terbaru dulu</option>
+          </select>
+        </div>
+        <ul class="task-list" id="taskList"></ul>
+      </section>
+    </main>
+
+    <aside class="panel">
+      <section class="card" id="formCard">
+        <h2 id="formTitle">Tambah Tugas</h2>
+        <form id="taskForm" autocomplete="off">
+          <label for="title">Nama tugas</label>
+          <input type="text" id="title" name="title" placeholder="Contoh: Laporan Praktikum PAW" maxlength="80" required>
+
+          <label for="course">Mata kuliah</label>
+          <input type="text" id="course" name="course" placeholder="Contoh: Pengembangan Aplikasi Web" maxlength="50">
+
+          <label for="deadline">Deadline</label>
+          <input type="date" id="deadline" name="deadline">
+
+          <div class="form-actions">
+            <button type="submit" class="btn" id="submitBtn">Tambah</button>
+            <button type="button" class="btn-ghost hidden" id="cancelBtn">Batal</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Tugas per Mata Kuliah</h2>
+        <ul class="courses" id="courses"></ul>
+      </section>
+    </aside>
+
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
