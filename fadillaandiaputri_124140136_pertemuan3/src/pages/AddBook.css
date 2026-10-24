@@ -1,0 +1,252 @@
+
+.add-book-page {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  min-height: calc(100vh - 72px);
+  background: #f4f3f1;
+}
+
+.add-book-intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 38px clamp(25px, 5vw, 70px);
+  background: #171717;
+  color: #fff;
+}
+
+.add-book-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  color: #fff;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.brand-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #777;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 1;
+  margin: 55px 0 35px;
+}
+
+.intro-label,
+.form-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.intro-label {
+  color: #aaa;
+}
+
+.intro-content h1 {
+  margin: 22px 0;
+  font-size: clamp(34px, 4vw, 55px);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.intro-content h1 span {
+  color: #aaa;
+}
+
+.intro-content > p:not(.intro-footer) {
+  max-width: 350px;
+  color: #c1c1c1;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.book-decoration {
+  position: relative;
+  width: 240px;
+  height: 155px;
+  margin: 35px auto 20px;
+  transform: rotate(-7deg);
+}
+
+.decor-book {
+  position: absolute;
+  width: 190px;
+  height: 43px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  box-shadow: 0 8px 15px #0005;
+}
+
+.decor-book-one {
+  bottom: 12px;
+  left: 10px;
+  background: #d8d6d2;
+}
+
+.decor-book-two {
+  bottom: 56px;
+  left: 28px;
+  background: #777;
+}
+
+.decor-book-three {
+  bottom: 100px;
+  left: 3px;
+  width: 160px;
+  background: #f5f4f1;
+}
+
+.intro-footer {
+  margin: 0;
+  color: #929292;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.add-book-content {
+  width: 100%;
+  max-width: 720px;
+  align-self: center;
+  justify-self: center;
+  padding: 45px clamp(25px, 5vw, 70px);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 55px;
+  color: #555;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #000;
+}
+
+.add-book-heading {
+  margin-bottom: 28px;
+}
+
+.form-eyebrow {
+  color: #777;
+}
+
+.add-book-heading h2 {
+  margin: 13px 0 8px;
+  color: #171717;
+  font-size: clamp(30px, 3.5vw, 40px);
+  letter-spacing: -1px;
+}
+
+.add-book-heading p {
+  margin: 0;
+  color: #777;
+  line-height: 1.7;
+}
+
+/* Form khusus halaman tambah buku */
+.add-book-content .book-form {
+  max-width: none;
+  padding: 28px;
+  border: 1px solid #e2e0dd;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px #00000008;
+}
+
+.add-book-content .book-form h2 {
+  display: none;
+}
+
+.add-book-content .form-group {
+  margin-bottom: 22px;
+}
+
+.add-book-content .form-group label {
+  font-size: 14px;
+}
+
+.add-book-content .book-form input,
+.add-book-content .book-form select {
+  min-height: 48px;
+  border-color: #d8d6d2;
+  border-radius: 9px;
+}
+
+.add-book-content .book-form button[type="submit"] {
+  min-height: 49px;
+  margin-top: 5px;
+  border-radius: 9px;
+  background: #171717;
+  font-weight: 700;
+}
+
+.add-book-content .book-form button[type="submit"]:hover {
+  background: #393939;
+}
+
+.form-note {
+  margin-top: 18px;
+  color: #85837f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .add-book-page {
+    grid-template-columns: 1fr;
+  }
+
+  .add-book-intro {
+    min-height: auto;
+    padding: 25px 7%;
+  }
+
+  .intro-content {
+    margin: 45px 0 20px;
+  }
+
+  .intro-content h1 {
+    font-size: 38px;
+  }
+
+  .book-decoration {
+    display: none;
+  }
+
+  .intro-footer {
+    margin-top: 25px;
+  }
+
+  .add-book-content {
+    padding: 35px 7%;
+  }
+
+  .back-link {
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 420px) {
+  .add-book-content .book-form {
+    padding: 20px;
+  }
+
+  .intro-content h1 {
+    font-size: 33px;
+  }
+}
